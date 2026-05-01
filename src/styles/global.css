@@ -1,0 +1,349 @@
+/*
+  Iza razglednice, minimalist editorial theme.
+  warm monochrome palette. Newsreader for headings,
+  Geist for body/UI, Geist Mono for the meta bits.
+*/
+
+:root {
+	--color-canvas: #fbfbfa;
+	--color-surface: #ffffff;
+	--color-ink: #111111;
+	--color-ink-soft: #2f3437;
+	--color-muted: #787774;
+	--color-muted-soft: #9b9a96;
+	--color-rule: #eaeaea;
+	--color-rule-strong: #d8d6d1;
+
+	/* Brand — pulled from the logo (navy frame + sage-teal mark). */
+	--color-brand: #183251;
+	--color-brand-deep: #0f223a;
+	--color-brand-soft: #62928d;
+
+	--selection-bg: #eaeaea;
+
+	/* Typography */
+	--font-sans: 'Geist', 'SF Pro Text', -apple-system, BlinkMacSystemFont,
+		'Helvetica Neue', Arial, sans-serif;
+	--font-serif: 'Newsreader', 'Iowan Old Style', 'Palatino Linotype',
+		Georgia, 'Times New Roman', serif;
+	--font-mono: 'Geist Mono', ui-monospace, 'SF Mono', 'JetBrains Mono',
+		Menlo, Consolas, monospace;
+
+	/* Layout */
+	--measure: 65ch;
+	--container: 1040px;
+	--container-narrow: 680px;
+	--header-height: 64px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	scroll-padding-top: calc(var(--header-height) + 1rem);
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: var(--color-canvas);
+	color: var(--color-ink-soft);
+	font-family: var(--font-sans);
+	font-size: 17px;
+	line-height: 1.6;
+	letter-spacing: -0.005em;
+	text-align: left;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	font-feature-settings: 'ss01', 'cv11';
+}
+
+::selection {
+	background: var(--selection-bg);
+	color: var(--color-ink);
+}
+
+main {
+	width: 100%;
+	max-width: var(--container);
+	margin: 0 auto;
+	padding: clamp(3rem, 8vw, 6rem) 1.5rem clamp(5rem, 10vw, 8rem);
+}
+
+/* Typography ---------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0 0 0.5rem 0;
+	color: var(--color-ink);
+	font-family: var(--font-sans);
+	font-weight: 500;
+	line-height: 1.15;
+	letter-spacing: -0.02em;
+}
+
+h1 {
+	font-family: var(--font-serif);
+	font-weight: 400;
+	font-size: clamp(2.4rem, 6vw, 4rem);
+	letter-spacing: -0.03em;
+	line-height: 1.05;
+}
+h2 {
+	font-family: var(--font-serif);
+	font-weight: 400;
+	font-size: clamp(1.6rem, 3vw, 2.1rem);
+	letter-spacing: -0.025em;
+	line-height: 1.2;
+}
+h3 {
+	font-size: clamp(1.15rem, 2vw, 1.35rem);
+	letter-spacing: -0.015em;
+}
+h4 {
+	font-size: 1.05rem;
+}
+h5 {
+	font-size: 0.95rem;
+}
+h6 {
+	font-size: 0.75rem;
+	font-family: var(--font-mono);
+	font-weight: 500;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	color: var(--color-muted);
+}
+
+p {
+	margin: 0 0 1.2em 0;
+}
+
+strong,
+b {
+	font-weight: 600;
+	color: var(--color-ink);
+}
+
+em,
+i {
+	font-style: italic;
+}
+
+a {
+	color: var(--color-ink);
+	text-decoration: underline;
+	text-decoration-color: var(--color-rule-strong);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.22em;
+	transition: text-decoration-color 160ms ease, color 160ms ease;
+}
+
+a:hover {
+	color: var(--color-ink);
+	text-decoration-color: var(--color-ink);
+}
+
+small {
+	font-size: 0.8125rem;
+	color: var(--color-muted);
+}
+
+/* Lists ---------------------------------------------------------------- */
+
+ul,
+ol {
+	padding-left: 1.25rem;
+}
+li {
+	margin-bottom: 0.4em;
+}
+
+/* Code ----------------------------------------------------------------- */
+
+code {
+	font-family: var(--font-mono);
+	font-size: 0.88em;
+	padding: 2px 6px;
+	background: #f5f5f4;
+	border: 1px solid var(--color-rule);
+	border-radius: 4px;
+}
+
+pre {
+	font-family: var(--font-mono);
+	font-size: 0.875rem;
+	line-height: 1.65;
+	padding: 1.5em;
+	background: #f5f5f4;
+	border: 1px solid var(--color-rule);
+	border-radius: 8px;
+	overflow-x: auto;
+}
+
+pre > code {
+	all: unset;
+}
+
+/* Forms ---------------------------------------------------------------- */
+
+input,
+textarea {
+	font: inherit;
+	font-size: 1rem;
+}
+
+textarea {
+	width: 100%;
+}
+
+/* Tables, images, rules ----------------------------------------------- */
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+th,
+td {
+	padding: 0.6em 0.8em;
+	border-bottom: 1px solid var(--color-rule);
+	text-align: left;
+}
+th {
+	font-family: var(--font-mono);
+	font-size: 0.75rem;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	color: var(--color-muted);
+	font-weight: 500;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+blockquote {
+	border-left: 1px solid var(--color-rule-strong);
+	margin: 1.6em 0;
+	padding: 0.1em 0 0.1em 1.5rem;
+	font-family: var(--font-serif);
+	font-size: 1.25em;
+	font-style: italic;
+	line-height: 1.45;
+	color: var(--color-ink);
+}
+
+blockquote p {
+	margin: 0;
+}
+
+hr {
+	border: none;
+	border-top: 1px solid var(--color-rule);
+	margin: 3rem 0;
+}
+
+/* Utility -------------------------------------------------------------- */
+
+.eyebrow {
+	font-family: var(--font-mono);
+	font-size: 0.7rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--color-muted);
+	font-weight: 500;
+	margin: 0;
+}
+
+.meta {
+	font-family: var(--font-mono);
+	font-size: 0.78rem;
+	letter-spacing: 0.04em;
+	color: var(--color-muted);
+}
+
+.tag {
+	display: inline-block;
+	font-family: var(--font-mono);
+	font-size: 0.68rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	padding: 0.25em 0.65em;
+	border-radius: 9999px;
+	background: #f5f5f4;
+	color: var(--color-ink-soft);
+	border: 1px solid var(--color-rule);
+	text-decoration: none;
+}
+
+.sr-only {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+/* Prose tightening for article body ----------------------------------- */
+
+.prose {
+	font-size: 1.0625rem;
+	line-height: 1.75;
+	color: var(--color-ink-soft);
+}
+.prose p {
+	margin-bottom: 1.4em;
+}
+.prose h2 {
+	margin-top: 2.4em;
+	margin-bottom: 0.6em;
+}
+.prose h3 {
+	margin-top: 2em;
+	margin-bottom: 0.5em;
+}
+.prose ul,
+.prose ol {
+	margin-bottom: 1.4em;
+}
+.prose img {
+	margin: 2.5em 0;
+	border-radius: 4px;
+	border: 1px solid var(--color-rule);
+}
+.prose a {
+	color: var(--color-ink);
+	text-decoration-color: var(--color-rule-strong);
+}
+.prose a:hover {
+	text-decoration-color: var(--color-ink);
+}
+
+@media (max-width: 720px) {
+	body {
+		font-size: 16px;
+	}
+	main {
+		padding-left: 1.25rem;
+		padding-right: 1.25rem;
+	}
+}
