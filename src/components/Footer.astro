@@ -1,0 +1,67 @@
+---
+import { SITE_TITLE } from '../consts';
+const today = new Date();
+---
+
+<footer class="site-footer">
+	<div class="footer-inner">
+		<span class="copy">
+			© {today.getFullYear()} {SITE_TITLE}. 1.a, Pazin.
+		</span>
+		<span class="links">
+			<a href="/">Naslovnica</a>
+			<a href="/blog">Zapisi</a>
+			<a href="/about">O projektu</a>
+		</span>
+	</div>
+</footer>
+
+<style>
+	.site-footer {
+		border-top: 1px solid var(--color-rule);
+		margin-top: clamp(5rem, 12vw, 9rem);
+	}
+
+	.footer-inner {
+		max-width: var(--container);
+		margin: 0 auto;
+		padding: 2.25rem 1.5rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1.5rem;
+		flex-wrap: wrap;
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		letter-spacing: 0.02em;
+		color: var(--color-muted);
+	}
+
+	.copy {
+		max-width: 60ch;
+	}
+
+	.links {
+		display: inline-flex;
+		gap: 1.5rem;
+	}
+
+	.links a {
+		color: var(--color-muted);
+		text-decoration: none;
+		transition: color 160ms ease;
+	}
+
+	.links a:hover {
+		color: var(--color-ink);
+	}
+
+	@media (max-width: 540px) {
+		.footer-inner {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 1rem;
+			padding: 2rem 1.25rem;
+		}
+	}
+</style>
