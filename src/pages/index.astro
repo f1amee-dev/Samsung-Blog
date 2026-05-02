@@ -1,0 +1,270 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import HeroImage from '../assets/blog/02-grad-pazin.jpg';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const posts = (await getCollection('blog'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 6);
+---
+
+<!doctype html>
+<html lang="hr">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="intro">
+				<div class="intro-text">
+					<h1>
+						Kako se vidi Istra<br />kad se gleda <em>iznutra?</em>
+					</h1>
+					<p class="lede">
+						Petero učenika 1.a iz Pazina, pet dana na terenu, sedam razgovora
+						kroz dva tjedna. Krenuli smo s jednim pitanjem: koliko nas turizam
+						zapravo košta?
+					</p>
+					<p class="actions">
+						<a class="btn" href="/blog">Pročitaj zapise s terena</a>
+						<a class="link-arrow" href="/about">
+							O projektu <span aria-hidden="true">→</span>
+						</a>
+					</p>
+				</div>
+
+				<figure class="intro-media">
+					<Image
+						src={HeroImage}
+						alt="Pogled na Pazin iz daljine"
+						width={920}
+						sizes="(min-width: 820px) 460px, 100vw"
+						priority
+					/>
+				</figure>
+			</section>
+
+			<section class="recent">
+				<header class="section-head">
+					<p class="eyebrow">Najnoviji zapisi</p>
+					<a class="all-link" href="/blog">Cijeli arhiv →</a>
+				</header>
+
+				<ol class="post-list" role="list">
+					{
+						posts.map((post) => (
+							<li class="post-row">
+								<a href={`/blog/${post.id}/`}>
+									<span class="row-date">
+										<FormattedDate date={post.data.pubDate} />
+									</span>
+									<span class="row-title">{post.data.title}</span>
+									<span class="row-arrow" aria-hidden="true">→</span>
+								</a>
+							</li>
+						))
+					}
+				</ol>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.intro {
+		display: grid;
+		grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+		gap: clamp(2rem, 5vw, 4rem);
+		align-items: center;
+		padding: clamp(3rem, 8vw, 6rem) 0 clamp(4rem, 9vw, 7rem);
+	}
+	.intro-text {
+		min-width: 0;
+	}
+	.intro h1 {
+		margin: 0 0 1.5rem;
+		max-width: 18ch;
+		text-wrap: balance;
+	}
+	.intro h1 em {
+		font-style: italic;
+		color: var(--color-brand-soft);
+	}
+	.lede {
+		font-size: 1.0625rem;
+		color: var(--color-muted);
+		line-height: 1.6;
+		max-width: 50ch;
+		margin: 0;
+	}
+
+	.intro-media {
+		margin: 0;
+		justify-self: end;
+		width: 100%;
+		max-width: 460px;
+		aspect-ratio: 4 / 5;
+		overflow: hidden;
+		border-radius: 6px;
+		border: 1px solid var(--color-rule);
+		background: var(--color-rule);
+	}
+	.intro-media :global(img) {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		filter: saturate(0.92);
+	}
+
+	.actions {
+		display: flex;
+		gap: 1.5rem;
+		flex-wrap: wrap;
+		align-items: center;
+		margin: 2rem 0 0;
+	}
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.7rem 1.15rem;
+		font-size: 0.9rem;
+		font-weight: 500;
+		text-decoration: none;
+		border-radius: 6px;
+		background: var(--color-brand);
+		color: #fff;
+		border: 1px solid var(--color-brand);
+		transition: background 160ms ease, border-color 160ms ease,
+			transform 120ms ease;
+	}
+	.btn:hover {
+		background: var(--color-brand-deep);
+		border-color: var(--color-brand-deep);
+		text-decoration: none;
+	}
+	.btn:active {
+		transform: scale(0.98);
+	}
+	.link-arrow {
+		font-size: 0.9rem;
+		color: var(--color-brand);
+		text-decoration: none;
+		border-bottom: 1px solid var(--color-rule-strong);
+		padding-bottom: 2px;
+		transition: border-color 160ms ease, color 160ms ease;
+	}
+	.link-arrow:hover {
+		color: var(--color-brand-deep);
+		border-color: var(--color-brand-soft);
+	}
+
+	.recent {
+		padding-top: clamp(2.5rem, 6vw, 4rem);
+		border-top: 1px solid var(--color-rule);
+	}
+
+	.section-head {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 1rem;
+		margin-bottom: 1.5rem;
+	}
+	.all-link {
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		letter-spacing: 0.06em;
+		color: var(--color-muted);
+		text-decoration: none;
+		transition: color 160ms ease;
+	}
+	.all-link:hover {
+		color: var(--color-ink);
+	}
+
+	.post-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.post-row {
+		margin: 0;
+		border-bottom: 1px solid var(--color-rule);
+	}
+	.post-row:first-child {
+		border-top: 1px solid var(--color-rule);
+	}
+	.post-row a {
+		display: grid;
+		grid-template-columns: 110px 1fr auto;
+		align-items: baseline;
+		gap: 1.5rem;
+		padding: 1.15rem 0.25rem;
+		text-decoration: none;
+		color: var(--color-ink);
+		transition: padding 200ms cubic-bezier(0.16, 1, 0.3, 1);
+	}
+	.post-row a:hover {
+		padding-left: 0.85rem;
+	}
+	.post-row a:hover .row-arrow {
+		transform: translateX(3px);
+		color: var(--color-ink);
+	}
+	.row-date {
+		font-family: var(--font-mono);
+		font-size: 0.74rem;
+		color: var(--color-muted);
+		letter-spacing: 0.02em;
+	}
+	.row-title {
+		font-size: 1rem;
+		font-weight: 500;
+		color: var(--color-ink);
+		line-height: 1.4;
+		letter-spacing: -0.015em;
+	}
+	.row-arrow {
+		font-family: var(--font-mono);
+		font-size: 0.85rem;
+		color: var(--color-muted-soft);
+		transition: transform 200ms ease, color 160ms ease;
+	}
+
+	@media (max-width: 820px) {
+		.intro {
+			grid-template-columns: 1fr;
+			gap: 2.25rem;
+			align-items: start;
+		}
+		.intro-media {
+			justify-self: stretch;
+			max-width: none;
+			aspect-ratio: 16 / 11;
+			order: -1;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.post-row a {
+			grid-template-columns: 90px 1fr;
+			gap: 1rem;
+			row-gap: 0.25rem;
+			padding: 1rem 0.25rem;
+		}
+		.row-arrow {
+			display: none;
+		}
+		.post-row a:hover {
+			padding-left: 0.25rem;
+		}
+	}
+</style>
