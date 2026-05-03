@@ -63,6 +63,6 @@ Drugo pitanje koje smo si postavili nakon montaže: čime se kao petero nas, sad
 
 Hvala svima koji su nam dali svoje vrijeme. Turističkoj zajednici Istarske županije, Obrtničkoj komori Istarske županije, Valamaru, gradonačelnici Pazina Suzani Jašić, AZRRI-ju, Koradu Korleviću i Komunalnom poduzeću Usluga Poreč.
 
-Hvala i profesoru Lovru Šverku i Ivi Luk, što su nam dali slobodu da pitamo i krivo, i otvoreno, i ponekad neugodno. I jedni drugima, Filip, Eva, Jura, Luana, Alen, što smo izdržali dva tjedna gledanja istih problema iz različitih kutova bez da smo se posvađali.
+Hvala i profesoru Lovru Šverku i pedagoginji Ivi Luk, što su nam dali slobodu da pitamo i krivo, i otvoreno, i ponekad neugodno. I jedni drugima, Filip, Eva, Jura, Luana, Alen, što smo izdržali dva tjedna gledanja istih problema iz različitih kutova bez da smo se posvađali.
 
 Sad ide finalna montaža video portfolia. Tamo će sve ovo izgledati malo drugačije, ali srž ostaje ista.

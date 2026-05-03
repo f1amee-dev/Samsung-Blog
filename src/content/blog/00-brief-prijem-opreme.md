@@ -7,7 +7,7 @@ heroImage: '../../assets/blog/brief-unboxing.jpg'
 
 ## 11. ožujka
 
-Sve je počelo u školskoj radionici. Mi smo razred 1.a, prirodoslovno-matematička gimnazija, u Gimnaziji i strukovnoj školi Jurja Dobrile u Pazinu, a u ekipi za ovaj projekt nas je pet: Filip, Eva, Jura, Luana i Alen. Vode nas profesor Lovro Šverko i Iva Luk.
+Sve je počelo u školskoj radionici. Mi smo razred 1.a, prirodoslovno-matematička gimnazija, u Gimnaziji i strukovnoj školi Jurja Dobrile u Pazinu, a u ekipi za ovaj projekt nas je pet: Filip, Eva, Jura, Luana i Alen. Vode nas profesor Lovro Šverko i pedagoginja Iva Luk.
 
 Na stol su nam stavili dvije kutije i u prvih pola sata se nije događalo ništa pametno. Samo raspakiravanje. Galaxy S26 Ultra i Z Flip7. Tko će prvi probati kameru, je li novi telefon brži od onog što već imamo u džepu, gdje ide kabel. Profesor nas je pustio sat vremena samo da se igramo, a onda je sjeo s nama da popričamo o čemu je zapravo cijela priča.
 
