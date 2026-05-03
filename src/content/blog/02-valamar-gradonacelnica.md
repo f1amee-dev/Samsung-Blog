@@ -40,4 +40,4 @@ Hotelski prostor i gradska vijećnica imaju potpuno različito svjetlo. Topli i 
 
 ## Otvorena nit
 
-Iza ovog dana imamo prvi pravi sukob u materijalu. Jedan sugovornik priča o sustavnom razvoju imena hotelske kuće, drugi o ljudima koji se sele jer im stan košta dvije plaće. Oba odgovora su istinita. Naš posao u mapi projekta nije birati stranu, nego pokazati kako te dvije slike stoje jedna pored druge.
+Iza ovog dana imamo prvi pravi sukob u materijalu. Jedan sugovornik priča o sustavnom razvoju imena hotelske kuće, drugi o ljudima koji se sele jer im najam stana košta dvije plaće. Oba odgovora su istinita. Naš posao u mapi projekta nije birati stranu, nego pokazati kako te dvije slike stoje jedna pored druge.
