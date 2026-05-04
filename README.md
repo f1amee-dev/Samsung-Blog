@@ -11,8 +11,8 @@ Stranica je napravljena u Astru, tekstovi su u `src/content/blog`.
 ## Pokretanje
 
 ```sh
-npm install
-npm run dev
+bun install
+bun dev
 ```
 
-Build ide u `dist/` preko `npm run build`.
+Build ide u `dist/` preko `bun run build`.
