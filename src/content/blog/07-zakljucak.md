@@ -3,6 +3,7 @@ title: 'Zaključak: što ostaje nakon dva tjedna i sedam razgovora'
 description: 'Završni blog projekta. Što nam je, nakon montaže videa i pet sugovornika u dva tjedna, zapravo ostalo u glavi o turizmu u Istri.'
 pubDate: 'May 3 2026'
 heroImage: '../../assets/blog/korlevic-petkom-u-sedam.jpg'
+videoUrl: 'https://youtu.be/K1Xq_qH4VkU'
 ---
 
 ## Petero nas, sedam intervjua, dva tjedna
