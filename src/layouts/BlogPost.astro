@@ -61,30 +61,6 @@ const youTubeId = getYouTubeId(videoUrl);
 				</header>
 
 				{
-					youTubeId && (
-						<aside class="doc-banner" aria-label="Finalni dokumentarac">
-							<div class="doc-banner-inner">
-								<p class="doc-banner-eyebrow">Finalni dokumentarac</p>
-								<p class="doc-banner-title">
-									Pogledaj cijeli dokumentarac projekta
-								</p>
-								<p class="doc-banner-desc">
-									Dva tjedna terena, sedam razgovora, jedan film.
-								</p>
-								<a
-									class="doc-banner-link"
-									href={videoUrl}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									Otvori na YouTubeu <span aria-hidden="true">↗</span>
-								</a>
-							</div>
-						</aside>
-					)
-				}
-
-				{
 					youTubeId ? (
 						<figure class="hero-video">
 							<div class="hero-video-frame">
@@ -202,57 +178,6 @@ const youTubeId = getYouTubeId(videoUrl);
 		object-fit: cover;
 		border-radius: 4px;
 		border: 1px solid var(--color-rule);
-	}
-
-	.doc-banner {
-		margin: 0 0 1.75rem;
-		padding: 1.25rem 1.4rem;
-		border: 1px solid var(--color-rule);
-		border-left: 3px solid var(--color-brand);
-		border-radius: 4px;
-		background: var(--color-surface, #fafaf7);
-	}
-	.doc-banner-inner {
-		display: flex;
-		flex-direction: column;
-		gap: 0.35rem;
-	}
-	.doc-banner-eyebrow {
-		font-family: var(--font-mono);
-		font-size: 0.7rem;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		color: var(--color-brand);
-		margin: 0;
-	}
-	.doc-banner-title {
-		font-family: var(--font-serif);
-		font-size: 1.1rem;
-		line-height: 1.35;
-		color: var(--color-ink);
-		margin: 0;
-	}
-	.doc-banner-desc {
-		font-size: 0.92rem;
-		line-height: 1.5;
-		color: var(--color-muted);
-		margin: 0;
-	}
-	.doc-banner-link {
-		align-self: flex-start;
-		margin-top: 0.4rem;
-		font-family: var(--font-mono);
-		font-size: 0.78rem;
-		letter-spacing: 0.02em;
-		color: var(--color-brand);
-		text-decoration: none;
-		border-bottom: 1px solid var(--color-rule-strong);
-		padding-bottom: 2px;
-		transition: color 160ms ease, border-color 160ms ease;
-	}
-	.doc-banner-link:hover {
-		color: var(--color-brand-deep);
-		border-color: var(--color-brand-soft);
 	}
 
 	.hero-video {
