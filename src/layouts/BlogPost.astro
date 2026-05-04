@@ -11,6 +11,7 @@ type Props = CollectionEntry<'blog'>['data'];
 const { title, description, pubDate, updatedDate, heroImage, videoUrl } =
 	Astro.props;
 
+// youtube links come in a few shapes, dig the 11-char id out of whatever we get
 function getYouTubeId(url: string | undefined): string | null {
 	if (!url) return null;
 	const patterns = [
